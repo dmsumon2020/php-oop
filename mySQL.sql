@@ -1,5 +1,6 @@
 --  MySQL Data Types    https://www.w3schools.com/mysql/mysql_datatypes.asp
 --  MySQL Operators     https://www.w3schools.com/mysql/mysql_operators.asp
+--  MySQL Functions     https://www.w3schools.com/mysql/mysql_ref_functions.asp
 
 
 -- An ENUM column can store only one value of a 
@@ -162,5 +163,99 @@ SELECT first_name, email FROM users WHERE email LIKE '%@yahoo.com';
 
 SELECT * FROM users  WHERE last_name LIKE '_smith%' -- The wildcard characters can be used at the front and/or back of a string in your queries.
 
+
+
+
 -- Sorting Query Results
+SELECT * FROM tablename ORDER BY column1, column2;
+SELECT * FROM tablename WHERE conditions ORDER BY column;
+
+-- EXAMPLE
+
+SELECT first_name, last_name FROM users ORDER BY last_name;
+SELECT first_name, last_name FROM users ORDER BY last_name DESC;
+SELECT first_name, last_name FROM users ORDER BY last_name ASC, first_name ASC;
+
+SELECT * FROM users WHERE last_name != 'Simpson' ORDER BY registration_date DESC;
+
+
+
+
+
+
+-- Limiting Query Results
+
+SELECT * FROM tablename LIMIT x;
+SELECT * FROM tablename LIMIT x, y; -- y records returned, starting at x.
+
+-- To have records 11 through 20  returned, you would write
+SELECT * FROM tablename LIMIT 10, 10
+
+-- Final
+SELECT * FROM table_name WHERE condition(s) LIKE condition ORDER BY column1, column2 LIMIT x;
+
+
+
+
+
+
+
+
+-- Updating Data
+
+UPDATE tablename SET column2=value WHERE column5=value LIMIT x;
+
+
+-- EXAMPLE
+SELECT * FROM users WHERE first_name='Din Muhammad' AND last_name='Sumon';
+
+UPDATE users SET email='dmsumon@yahoo.com' WHERE user_id=27;
+
+
+
+
+
+
+
+-- Deleting a DATA
+DELETE FROM tablename WHERE condition;
+
+
+--- The preferred way to empty a table is to use TRUNCATE:
+
+TRUNCATE TABLE tablename;
+
+-- To delete all of the data in a table, as well as the table itself, use DROP TABLE:
+
+DROP TABLE tablename;
+
+-- To delete an entire database, including every table therein and all of its data, use
+DROP DATABASE databasename;
+
+
+
+
+
+-- Using Functions
+SELECT * FROM table_name;
+
+SELECT CONCAT(first_name, ', ', last_name) FROM users;
+
+
+SELECT CONCAT(last_name, ', ', first_name) AS Name FROM users ORDER BY Name;
+
+SELECT LENGTH(last_name) AS L, last_name FROM users ORDER BY L DESC LIMIT 1;
+
+
+SELECT DATE(registration_date) AS Date FROM users ORDER BY registration_date DESC LIMIT 1;
+
+SELECT DAYNAME(registration_date) AS Weekday FROM users ORDER BY registration_date ASC LIMIT 1;
+
+SELECT LAST_DAY(CURDATE()), MONTHNAME(CURDATE());
+
+
+SELECT email, DATE_FORMAT(registration_date, '%a %b %e %Y')
+AS Date FROM users
+ORDER BY registration_date DESC
+LIMIT 5;
 
