@@ -43,3 +43,61 @@
 -- If you need absolute precision when 
 -- using non-integers, DECIMAL is preferred 
 -- over FLOAT or DOUBLE.
+
+
+
+
+-- You can also flag the number types as 
+-- ZEROFILL, which means that any extra room 
+-- will be padded with zeros (ZEROFILLs are 
+-- also automatically UNSIGNED).
+
+
+
+
+
+
+
+-- To finish defining your columns:
+
+-- 1) Identify your primary key.
+
+-- 2) Identify which columns cannot have a NULL value.
+
+-- 3) Make any numeric type UNSIGNED if it won’t ever store negative numbers
+
+-- 4) Establish the default value for any column. (if possible)
+
+
+
+CREATE DATABASE databasename;
+
+USE databasename;
+
+CREATE TABLE tablename (
+column1name type SIGNED/ UNSIGNED NULL/NOT NULL AUTO_INCREMENT,
+column2name description,
+PRIMARY KEY (column1name);
+
+
+CREATE TABLE users(
+    user_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(40) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    pass CHAR(40) NOT NULL,
+    registration_date DATETIME NOT NULL,
+    PRIMARY KEY (user_id)
+);
+
+-- How to See tables
+SHOW TABLES; 
+
+-- How to see columns
+
+SHOW COLUMNS FROM table_name;
+
+
+-- inserting Records
+
+INSERT INTO table_name (column1, columnn2, column3) VALUES (value1, value2, value 3);
