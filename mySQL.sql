@@ -143,7 +143,24 @@ SELECT * FROM which_table;
 SELECT which_columns FROM which_table WHERE condition(s);
 
 
+-- Example
+
+SELECT * FROM users WHERE last_name = 'Simpson';
+SELECT first_name FROM users WHERE last_name = 'Simpson';
+SELECT first_name, last_name FROM users WHERE last_name = 'Simpson';
+SELECT * FROM users WHERE email IS NULL;
+SELECT * FROM users WHERE email='';
+SELECT user_id, first_name, last_name FROM users WHERE pass = SHA1('mypass');
+SELECT first_name, last_name FROM users WHERE (user_id < 10) OR (user_id > 20);
 
 
+-- Using LIKE and NOT LIKE
 
+SELECT * FROM users WHERE last_name LIKE 'Smith%'
+
+SELECT first_name, email FROM users WHERE email LIKE '%@yahoo.com'; 
+
+SELECT * FROM users  WHERE last_name LIKE '_smith%' -- The wildcard characters can be used at the front and/or back of a string in your queries.
+
+-- Sorting Query Results
 
