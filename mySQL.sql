@@ -1,3 +1,7 @@
+--  MySQL Data Types    https://www.w3schools.com/mysql/mysql_datatypes.asp
+--  MySQL Operators     https://www.w3schools.com/mysql/mysql_operators.asp
+
+
 -- An ENUM column can store only one value of a 
 -- possible several thousand, while SET allows 
 -- for several of up to 64 possible values. 
