@@ -100,4 +100,46 @@ SHOW COLUMNS FROM table_name;
 
 -- inserting Records
 
-INSERT INTO table_name (column1, columnn2, column3) VALUES (value1, value2, value 3);
+INSERT INTO table_name (column1, column2, column3) VALUES (value1, value2, value3);
+INSERT INTO table_name VALUES (value1, value2, value3); -- This will insert values in every columns
+
+-- MySQL also allows you to insert multiple 
+-- rows at one time, separating each record 
+-- by a comma
+
+INSERT INTO table_name (column1, column2) VALUES (val1, val2), (val3, val4), (val5, val6); -- It's not SQL standard
+
+-- Example
+
+INSERT INTO users (first_name, last_name, email, pass, registration_date)
+VALUES ('Larry', 'Ulman', 'email@gmail.com', SHA1('pasword'), NOW());
+
+INSERT INTO users VALUES(NULL, 'Din', 'Sumon', 'dmsumon@gmail.com', SHA1('pasword'), NOW());
+
+INSERT INTO users (first_name, last_name, email, pass, registration_date)
+VALUES  ('Rocky', 'Vai', 'rocky@gmail.com', SHA1('pasword2'), NOW()),
+        ('Raihan', 'Alam', 'raihan@gmail.com', SHA1('pasword3'), NOW()),
+        ('Vicky', 'Koshal', 'vicky@gmail.com', SHA1('pasword4'), NOW()),
+        ('Russel', 'Crowe', 'russel@gmail.com', SHA1('pasword5'), NOW());
+
+
+
+
+
+
+
+
+-- Selecting Data
+
+
+SELECT which_columns FROM which_table;
+
+SELECT * FROM which_table;
+
+SELECT which_columns FROM which_table WHERE condition(s);
+
+
+
+
+
+
