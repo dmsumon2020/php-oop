@@ -1,5 +1,15 @@
-SELECT what_columns if_else_condition FROM table1 JOIN_TYPE table2 JOIN_CLAUSE;
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;  
 
-SELECT u.username, IF (COUNT(message_id)>0, COUNT(message_id), 'This user has no post yet') AS Posts
-FROM users AS u LEFT JOIN messages AS m USING(user_id)
-GROUP BY u.user_id;
+
+UPDATE customers
+SET salt=SUBSTRING(MD5(RAND()), -20)
+WHERE customer_id=1;
+
+
+
+
+UPDATE customers
+SET pin=AES_ENCRYPT('123', salt)
+WHERE customer_id=1;

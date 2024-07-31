@@ -480,3 +480,5 @@ ORDER BY Name;
 
 SHOW TABLE STATUS\G;
 SHOW TABLE STATUS LIKE 'messages';
+OPTIMIZE TABLE tablename; --  Running this command is particularly beneficial after changing a table via an ALTER command, or after a table has had lots of DELETE queries run on it
+ANALYZE TABLE tablename; --Executing this command updates the indexes on the table, thereby improving their usage in queries

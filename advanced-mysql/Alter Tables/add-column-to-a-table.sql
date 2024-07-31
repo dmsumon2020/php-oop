@@ -1,1 +1,1 @@
-ALTER TABLE table_name ADD COLUMN column_name TYPE
+ALTER TABLE table_name ADD COLUMN column_name TYPE NOT NULL
