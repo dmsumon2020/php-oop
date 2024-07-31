@@ -398,8 +398,8 @@ ON DELETE NO ACTION ON UPDATE NO ACTION
 SELECT (what_columns) FROM (tableA) (JOIN_TYPE) (tableB) (JOIN_CLAUSE);
 
 SELECT what_columns FROM tableA 
-➝ JOIN_TYPE tableB JOIN_CLAUSE 
-➝ JOIN_TYPE tableC JOIN_CLAUSE
+JOIN_TYPE tableB JOIN_CLAUSE 
+JOIN_TYPE tableC JOIN_CLAUSE
 
 
 
@@ -451,3 +451,32 @@ ORDER BY date_entered DESC LIMIT 5;
 SELECT what_columns FROM table
 WHERE condition GROUP BY column
 ORDER BY column LIMIT x, y;
+
+
+-- EXAMPLE
+
+SELECT SUM(balance) AS Total, COUNT(account_id) AS Number, customer_id FROM accounts 
+GROUP BY (customer_id);
+
+
+SELECT SUM(balance) AS Total, COUNT(account_id) AS Number, 
+CONCAT(c.last_name, ', ', c.first_name) AS Name
+FROM accounts AS a 
+INNER JOIN customers AS c 
+USING (customer_id)
+GROUP BY (a.customer_id) 
+ORDER BY Name;
+
+
+
+SELECT GROUP_CONCAT(balance) AS Total, CONCAT(c.last_name, ', ', c.first_name) AS Name
+FROM accounts AS a 
+INNER JOIN customers AS c 
+USING (customer_id) 
+GROUP BY (a.customer_id) 
+ORDER BY Name;
+
+
+
+SHOW TABLE STATUS\G;
+SHOW TABLE STATUS LIKE 'messages';
