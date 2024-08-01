@@ -11,5 +11,11 @@ WHERE customer_id=1;
 
 
 UPDATE customers
-SET pin=AES_ENCRYPT('123', salt)
+SET pin=AES_ENCRYPT(123, salt)
 WHERE customer_id=1;
+
+
+SELECT which_columns FROM which_table WHERE condition(s);
+
+
+SELECT AES_DECRYPT(pin, salt) FROM customers WHERE  customer_id=1;
