@@ -2,7 +2,7 @@
 echo '<h1>Registered Users</h1>';
 require('mysqli_connect.php');
 
-$query = "SELECT first_name, last_name, DATE_FORMAT(registration_date, '%c %b, %Y') AS dr, user_id FROM users;";
+$query = "";
 $result = mysqli_query($dbc, $query);
 $number = mysqli_num_rows($result);
 
@@ -23,8 +23,8 @@ if ($number>0) {
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         echo '
             <tr>
-                <td><a href="edit_user.php?id='.$row['user_id'].'">Edit</a></td>
-                <td><a href="delete.php?id='.$row['user_id'].'">Delete</a></td>
+                <td><a href="example-edit-user.php?id='.$row['user_id'].'">Edit</a></td>
+                <td><a href="example-delete-user.php?id='.$row['user_id'].'">Delete</a></td>
                 <td>'.$row['first_name'].'</td>
                 <td>'.$row['last_name'].'</td>
                 <td>'.$row['dr'].'</td>

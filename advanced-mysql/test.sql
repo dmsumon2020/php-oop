@@ -1,6 +1,17 @@
 SELECT which_columns FROM which_table WHERE condition(s);
 
-SELECT user_id FROM users WHERE email='tonyhassan@gmail.com';
-SELECT user_id FROM users WHERE (email='don@authors.com');
-SELECT user_id FROM users WHERE (email='tonyhassan@gmail.com' AND pass=SHA('$p', 512) )
+
+SELECT first_name, last_name, DATE_FORMAT(registration_date, '%d %b, %Y') FROM users LIMIT 10;
+
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition; 
+
+
+UPDATE users SET first_name='Bibi', last_name='Ayesha', email='ayesha@gmail.com' WHERE user_id='2';
+
+
+SELECT COUNT(user_id) FROM users;
+
 
