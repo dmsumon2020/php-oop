@@ -20,3 +20,16 @@ date_default_timezone_set('America/New_York');
 scandir();
 
 substr(string_name, start_position, string_length_to_cut);
+
+
+echo dirname($_SERVER['PHP_SELF']);
+
+
+// If you are looking to match an exact 
+// string within another string, use the strstr()
+
+strstr();
+
+rray_fill_keys ( $keys, $value )
+array_map();
+array_key_exists($key, $array);
