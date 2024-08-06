@@ -6,7 +6,7 @@ echo '<h2>Example - 1</h2>';
 
 function combine_names($firstName, $lastName) {
     return $firstName . ' ' . $lastName;
-  }
+}
   
   $firstNames = ['John', 'Jane', 'Doe'];
   $lastNames = ['Doe', 'Smith', 'Johnson'];
